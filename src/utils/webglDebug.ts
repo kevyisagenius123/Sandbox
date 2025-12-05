@@ -28,7 +28,7 @@ class WebGLDebugger {
       contextType: string,
       ...args: any[]
     ): any {
-      const context = self.originalGetContext!.call(this, contextType, ...args) as any
+      const context = (self.originalGetContext!.call as any)(this, contextType, ...args)
 
       if (contextType === 'webgl' || contextType === 'webgl2') {
         if (context && !self.contexts.has(context)) {

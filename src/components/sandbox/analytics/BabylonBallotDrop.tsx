@@ -181,7 +181,7 @@ export const BabylonBallotDrop: React.FC<BabylonBallotDropProps> = ({ aggregates
         binMat.reflectivityColor = new Color3(0.2, 0.2, 0.2)
         binMat.microSurface = 0.8
         binMat.alpha = 0.5 
-        binMat.transparencyMode = PBRMaterial.PBR_MATERIAL_ALPHABLEND
+        binMat.transparencyMode = PBRMaterial.PBRMATERIAL_ALPHABLEND
         binMat.backFaceCulling = false
 
         // Lid Material (Dark Plastic)

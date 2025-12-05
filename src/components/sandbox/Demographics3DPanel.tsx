@@ -335,7 +335,7 @@ export const Demographics3DPanel: React.FC<Demographics3DPanelProps> = ({
             age: breakdowns.age.length
           }
         : null,
-      demographicsKeys: demographics ? Object.keys(demographics as Record<string, unknown>) : []
+      demographicsKeys: demographics ? Object.keys(demographics as unknown as Record<string, unknown>) : []
     })
   }, [
     selectedCountyGeoid,

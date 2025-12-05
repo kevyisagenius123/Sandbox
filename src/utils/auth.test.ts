@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   setAuthToken,
   getAuthToken,
-  clearAuthToken,
+  clearAuth,
   login,
   register,
   logout,
@@ -20,13 +20,14 @@ describe('Auth Utility', () => {
   describe('Token Storage', () => {
     it('should store auth token in localStorage', () => {
       const token = 'test-jwt-token';
-      setAuthToken(token);
-      expect(localStorage.getItem('authToken')).toBe(token);
+      const userData = { userId: '1', email: 'test@test.com', username: 'test', role: 'user', subscriptionTier: 'free' };
+      setAuthToken(token, userData);
+      expect(localStorage.getItem('sandbox_auth_token')).toBe(token);
     });
 
     it('should retrieve auth token from localStorage', () => {
       const token = 'test-jwt-token';
-      localStorage.setItem('authToken', token);
+      localStorage.setItem('sandbox_auth_token', token);
       expect(getAuthToken()).toBe(token);
     });
 
@@ -35,9 +36,11 @@ describe('Auth Utility', () => {
     });
 
     it('should clear auth token from localStorage', () => {
-      localStorage.setItem('authToken', 'test-token');
-      clearAuthToken();
-      expect(localStorage.getItem('authToken')).toBeNull();
+      const token = 'test-token';
+      const userData = { userId: '1', email: 'test@test.com', username: 'test', role: 'user', subscriptionTier: 'free' };
+      setAuthToken(token, userData);
+      clearAuth();
+      expect(localStorage.getItem('sandbox_auth_token')).toBeNull();
     });
   });
 
@@ -60,7 +63,7 @@ describe('Auth Utility', () => {
       const result = await login('test@example.com', 'password123');
 
       expect(result).toEqual(mockResponse);
-      expect(localStorage.getItem('authToken')).toBe('jwt-token-123');
+      expect(localStorage.getItem('sandbox_auth_token')).toBe('jwt-token-123');
       expect(global.fetch).toHaveBeenCalledWith(
         expect.stringContaining('/api/auth/login'),
         expect.objectContaining({
@@ -110,7 +113,7 @@ describe('Auth Utility', () => {
       );
 
       expect(result).toEqual(mockResponse);
-      expect(localStorage.getItem('authToken')).toBe('jwt-token-456');
+      expect(localStorage.getItem('sandbox_auth_token')).toBe('jwt-token-456');
     });
 
     it('should throw error on registration failure', async () => {

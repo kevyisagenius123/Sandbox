@@ -74,7 +74,7 @@ export const BabylonInteractiveBallot: React.FC<Props> = ({ onSwitchBallotType }
     
     ctx.fillStyle = '#FFFFFF'
     ctx.font = 'bold 44px "Times New Roman", serif'
-    ctx.textAlign = 'center'
+    ;(ctx as any).textAlign = 'center'
     ctx.fillText('OFFICIAL GENERAL ELECTION BALLOT', width/2, 100)
     
     ctx.font = 'bold 28px Arial, sans-serif'
@@ -86,7 +86,7 @@ export const BabylonInteractiveBallot: React.FC<Props> = ({ onSwitchBallotType }
     ctx.strokeRect(40, 180, 320, 280)
     
     ctx.fillStyle = '#000000'
-    ctx.textAlign = 'left'
+    ;(ctx as any).textAlign = 'left'
     ctx.font = 'bold 22px Arial, sans-serif'
     ctx.fillText('INSTRUCTIONS TO VOTERS', 50, 215)
     
@@ -120,7 +120,7 @@ export const BabylonInteractiveBallot: React.FC<Props> = ({ onSwitchBallotType }
     ctx.fillRect(col1X, 180, colWidth, 50)
     
     ctx.fillStyle = '#FFFFFF'
-    ctx.textAlign = 'left'
+    ;(ctx as any).textAlign = 'left'
     ctx.font = 'bold 32px Arial, sans-serif'
     ctx.fillText('PRESIDENT OF THE UNITED STATES', col1X + 20, 215)
     
@@ -167,7 +167,7 @@ export const BabylonInteractiveBallot: React.FC<Props> = ({ onSwitchBallotType }
 
       // Text
       ctx.fillStyle = '#000000'
-      ctx.textAlign = 'left'
+      ;(ctx as any).textAlign = 'left'
       
       // Name
       ctx.font = 'bold 36px Arial, sans-serif'
@@ -303,7 +303,7 @@ export const BabylonInteractiveBallot: React.FC<Props> = ({ onSwitchBallotType }
     labelCtx.fillRect(0, 0, 256, 128)
     labelCtx.font = 'bold 40px Arial'
     labelCtx.fillStyle = 'white'
-    labelCtx.textAlign = 'center'
+    ;(labelCtx as any).textAlign = 'center'
     labelCtx.fillText('Switch to', 128, 50)
     labelCtx.fillText('RCV Ballot', 128, 90)
     labelTexture.update()

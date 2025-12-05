@@ -72,7 +72,7 @@ export const BabylonRCVBallot: React.FC<Props> = ({ onSwitchBallotType }) => {
     
     ctx.fillStyle = '#FFFFFF'
     ctx.font = 'bold 44px "Times New Roman", serif'
-    ctx.textAlign = 'center'
+    ;(ctx as any).textAlign = 'center'
     ctx.fillText('OFFICIAL RANKED CHOICE BALLOT', width/2, 100)
     ctx.font = 'bold 28px Arial, sans-serif'
     ctx.fillText('MUNICIPAL ELECTION • NOVEMBER 8, 2025', width/2, 145)
@@ -83,7 +83,7 @@ export const BabylonRCVBallot: React.FC<Props> = ({ onSwitchBallotType }) => {
     ctx.strokeRect(40, 180, width - 80, 150)
     
     ctx.fillStyle = '#000000'
-    ctx.textAlign = 'left'
+    ;(ctx as any).textAlign = 'left'
     ctx.font = 'bold 22px Arial, sans-serif'
     ctx.fillText('INSTRUCTIONS', 60, 215)
     ctx.font = '18px Arial, sans-serif'
@@ -102,7 +102,7 @@ export const BabylonRCVBallot: React.FC<Props> = ({ onSwitchBallotType }) => {
     ctx.fillRect(40 + nameColWidth, startY - 50, width - 80 - nameColWidth, 50)
     
     ctx.fillStyle = '#000000'
-    ctx.textAlign = 'center'
+    ;(ctx as any).textAlign = 'center'
     ctx.font = 'bold 20px Arial, sans-serif'
     for(let r=1; r<=RANKS; r++) {
         const x = 40 + nameColWidth + (r-1)*rankColWidth + rankColWidth/2
@@ -130,7 +130,7 @@ export const BabylonRCVBallot: React.FC<Props> = ({ onSwitchBallotType }) => {
 
         // Candidate Name
         ctx.fillStyle = '#000000'
-        ctx.textAlign = 'left'
+        ;(ctx as any).textAlign = 'left'
         ctx.font = 'bold 32px Arial, sans-serif'
         ctx.fillText(c.name, 60, y + 50)
         ctx.font = 'italic 24px "Times New Roman", serif'
@@ -236,7 +236,7 @@ export const BabylonRCVBallot: React.FC<Props> = ({ onSwitchBallotType }) => {
     labelCtx.fillRect(0, 0, 256, 128)
     labelCtx.font = 'bold 40px Arial'
     labelCtx.fillStyle = 'white'
-    labelCtx.textAlign = 'center'
+    ;(labelCtx as any).textAlign = 'center'
     labelCtx.fillText('Switch to', 128, 50)
     labelCtx.fillText('Standard', 128, 90)
     labelTexture.update()

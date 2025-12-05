@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '@babylonjs/loaders'; // Import loaders for OBJ support
-import { OBJFileLoader } from '@babylonjs/loaders/OBJ/objFileLoader';
 import { 
   Engine, 
   Scene, 
