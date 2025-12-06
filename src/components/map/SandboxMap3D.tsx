@@ -8,7 +8,6 @@ import type { CountyGeoMetadata, CountyResult } from '../../types/sandbox'
 import { STATE_META_BY_FIPS } from '../../constants/usStates'
 import { MapHoverTooltip, MapHoverInfo } from './MapHoverTooltip'
 import { detectWebGLSupport, type WebGLSupport } from '../../utils/webglSupport'
-import { useVoteBarChartLayer } from '../sandbox/map/VoteBarChartLayer'
 import { debugLog, debugWarn } from '../../utils/debugLogger'
 
 type ViewState = { longitude: number; latitude: number; zoom: number; pitch?: number; bearing?: number }
@@ -68,11 +67,6 @@ export const SandboxMap3D: React.FC<SandboxMap3DProps> = ({
   const countyHeightScale = 1.75
   const [hoverInfo, setHoverInfo] = useState<MapHoverInfo | null>(null)
   const notifiedFailureRef = useRef(false)
-  
-  // Bar chart layer controls
-  const [showBarChart, setShowBarChart] = useState(false)
-  const [barHeightScale, setBarHeightScale] = useState(0.1)
-  const [barRadiusScale, setBarRadiusScale] = useState(5000)
   
   // Listen for deck.gl errors and disable 3D if shader compilation fails
   useEffect(() => {
@@ -555,7 +549,7 @@ export const SandboxMap3D: React.FC<SandboxMap3DProps> = ({
   // Keep re-rendering when simulation state updates (external) by bumping tickKey
   useEffect(()=>{ setTickKey(k=>k+1) }, [countyStates])
 
-  if (webglStatus === 'unsupported') {
+  if (webglStatus !== 'supported') {
     return (
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-slate-950/80 px-6 text-center text-slate-200">
         <p className="text-base font-semibold">3D map unavailable</p>

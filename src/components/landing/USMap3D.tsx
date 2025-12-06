@@ -21,7 +21,7 @@ interface StateBlockProps {
   stateId: string
 }
 
-function StateBlock({ coordinates, name, stateId }: StateBlockProps) {
+function StateBlock({ coordinates, stateId }: StateBlockProps) {
   const meshRef = useRef<THREE.Group>(null)
   const hoverHeight = useRef(0.1)
   const baseHeight = 0.1

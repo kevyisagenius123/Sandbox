@@ -195,7 +195,6 @@ export const MapHoverTooltip: React.FC<{ info: MapHoverInfo | null }> = ({ info 
   const margin = marginPct ?? (gopPercent - demPercent)
   const marginLabel = hasVotes ? `+${Math.abs(margin).toFixed(1)}` : '—'
   const marginColor = margin > 0 ? 'text-red-400' : margin < 0 ? 'text-blue-400' : 'text-zinc-400'
-  const leader = margin > 0 ? 'REP' : margin < 0 ? 'DEM' : 'TIED'
 
   const flagUrl = info.stateFips ? STATE_FLAG_URL[info.stateFips] : undefined
   const locationTag = info.type === 'state' ? 'STATE' : 'COUNTY'
