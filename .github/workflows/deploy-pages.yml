@@ -18,7 +18,7 @@ concurrency:
 env:
   NODE_VERSION: '20'
   # Use fixed base path for GitHub Pages.
-  PAGES_BASE_PATH: '/sandbox/'
+  PAGES_BASE_PATH: '/Sandbox/'
 
 jobs:
   build:
