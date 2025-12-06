@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@babylonjs/core": "^7.18.0",
+    "@babylonjs/loaders": "^7.18.0",
     "@deck.gl/core": "^9.1.14",
     "@deck.gl/geo-layers": "^9.1.14",
     "@deck.gl/layers": "^9.1.14",
