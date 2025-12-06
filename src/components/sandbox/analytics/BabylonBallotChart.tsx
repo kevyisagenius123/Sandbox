@@ -13,7 +13,6 @@ import {
   DynamicTexture
 } from '@babylonjs/core'
 import type { CountySimulationState } from '../../../types/sandbox'
-import { useSandboxThemeOrDefault } from '../../../design/SandboxThemeProvider'
 
 interface BabylonBallotChartProps {
   countyStates: Map<string, CountySimulationState>
@@ -22,7 +21,6 @@ interface BabylonBallotChartProps {
 
 export const BabylonBallotChart: React.FC<BabylonBallotChartProps> = ({ countyStates, selectedCountyFips }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const theme = useSandboxThemeOrDefault()
 
   const selectedCounty = selectedCountyFips ? countyStates.get(selectedCountyFips) : null
 

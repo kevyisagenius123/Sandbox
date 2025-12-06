@@ -27,6 +27,12 @@
     }
   },
   "include": ["src"],
-  "exclude": ["src/pages/SandboxStudioPage.old.tsx"],
+  "exclude": [
+    "src/pages/SandboxStudioPage.old.tsx",
+    "src/**/*_original.tsx",
+    "src/pages/AnalyticsTestPage.tsx",
+    "src/pages/SandboxPlayerPage.tsx",
+    "src/pages/SandboxLandingPageThree.tsx"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

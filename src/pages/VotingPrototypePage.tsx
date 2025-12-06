@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { BabylonInteractiveBallot } from '../components/sandbox/voting/BabylonInteractiveBallot'
 import { BabylonRCVBallot } from '../components/sandbox/voting/BabylonRCVBallot'
 

@@ -205,12 +205,11 @@ export const SandboxStudioMain: React.FC<SandboxStudioMainProps> = ({
                   editedCounties={editedCounties}
                   selectedStates={selectedStates}
                   onStateSelect={(stateFips) => {
-                    onSelectedStatesChange((previous) => {
-                      if (previous.includes(stateFips)) {
-                        return previous.filter((entry) => entry !== stateFips)
-                      }
-                      return [...previous, stateFips]
-                    })
+                    if (selectedStates?.includes(stateFips)) {
+                      onSelectedStatesChange?.(selectedStates.filter((entry: string) => entry !== stateFips))
+                    } else {
+                      onSelectedStatesChange?.([...(selectedStates || []), stateFips])
+                    }
                   }}
                   opacity={1.0}
                   highQuality={true}

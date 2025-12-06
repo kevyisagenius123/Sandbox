@@ -63,6 +63,7 @@ interface SimulationMetadata {
 }
 
 // Color function: dynamic based on candidate colors
+// @ts-ignore - unused utility function
 function sandboxColor(candidateVotes: {[id: number]: number}, candidates: Candidate[], reporting: number): [number,number,number,number] {
   if (reporting <= 0.005) return [140,155,175,160];
   
@@ -404,6 +405,7 @@ const SandboxPlayerPage: React.FC = () => {
     const totals = currentFrame.stateTotals;
     const marginPct = totals.marginPercent || 0;
     
+    // @ts-ignore - calculated but not used
     const targetAlpha = showCounties ? 0 : clamp(Math.min(fillAlpha, 220), 30, 255);
     
     return new GeoJsonLayer<Feature<Geometry, any>>({

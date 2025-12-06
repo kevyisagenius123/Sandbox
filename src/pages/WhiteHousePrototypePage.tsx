@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { BabylonWhiteHouse } from '../components/sandbox/analytics/BabylonWhiteHouse'
 
 export const WhiteHousePrototypePage = () => {

@@ -15,19 +15,15 @@ import {
   CubicEase, 
   EasingFunction,
   DynamicTexture,
-  SpotLight,
-  Mesh,
-  SceneLoader
+  SpotLight
 } from '@babylonjs/core';
 import { TransformNode } from '@babylonjs/core/Meshes/transformNode';
-import type { ISceneLoaderPlugin } from '@babylonjs/core/Loading/sceneLoader';
 
 const registerObjLoader = (() => {
   let registered = false;
   return () => {
     if (registered) return;
-    const loader = new OBJFileLoader() as unknown as ISceneLoaderPlugin;
-    SceneLoader.RegisterPlugin(loader);
+    // OBJ loader is automatically registered when @babylonjs/loaders is imported
     registered = true;
   };
 })();

@@ -10,8 +10,6 @@ import {
   Color3,
   Color4,
   SpotLight,
-  Texture,
-  Mesh,
   GlowLayer
 } from '@babylonjs/core'
 

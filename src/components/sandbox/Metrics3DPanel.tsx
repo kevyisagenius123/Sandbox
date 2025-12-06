@@ -26,7 +26,6 @@ interface Metrics3DPanelProps {
 export const Metrics3DPanel: React.FC<Metrics3DPanelProps> = ({
   history,
   currentTimeSeconds,
-  totalDuration,
   width = '100%',
   height = '500px'
 }) => {

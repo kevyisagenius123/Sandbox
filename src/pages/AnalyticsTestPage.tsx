@@ -36,6 +36,7 @@ export const AnalyticsTestPage: React.FC = () => {
     voteEtaSeconds: null
   }
 
+  // @ts-ignore - mock object for testing
   const mockCountyState: CountySimulationState = {
     currentDemVotes: 45000,
     currentGopVotes: 55000,

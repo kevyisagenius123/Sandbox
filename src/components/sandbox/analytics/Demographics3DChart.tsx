@@ -261,6 +261,7 @@ export default function Demographics3DChart({
           }
         }
       },
+      // @ts-ignore - echarts-gl bar3D not in base echarts types
       series: [
         {
           type: 'bar3D',

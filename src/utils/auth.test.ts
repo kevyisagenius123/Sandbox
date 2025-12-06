@@ -60,7 +60,7 @@ describe('Auth Utility', () => {
         json: async () => mockResponse,
       });
 
-      const result = await login('test@example.com', 'password123');
+      const result = await login('test@example.com', 'password123', 'http://localhost:8081');
 
       expect(result).toEqual(mockResponse);
       expect(localStorage.getItem('sandbox_auth_token')).toBe('jwt-token-123');
@@ -84,7 +84,7 @@ describe('Auth Utility', () => {
         json: async () => ({ message: 'Invalid credentials' }),
       });
 
-      await expect(login('test@example.com', 'wrongpassword')).rejects.toThrow(
+      await expect(login('test@example.com', 'wrongpassword', 'http://localhost:8081')).rejects.toThrow(
         'Login failed'
       );
     });
@@ -109,7 +109,8 @@ describe('Auth Utility', () => {
       const result = await register(
         'newuser@example.com',
         'newuser',
-        'password123'
+        'password123',
+        'http://localhost:8081'
       );
 
       expect(result).toEqual(mockResponse);
@@ -124,7 +125,7 @@ describe('Auth Utility', () => {
       });
 
       await expect(
-        register('existing@example.com', 'user', 'password123')
+        register('existing@example.com', 'user', 'password123', 'http://localhost:8081')
       ).rejects.toThrow('Registration failed');
     });
   });

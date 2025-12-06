@@ -10,12 +10,9 @@ import {
   Color3,
   Color4,
   TransformNode,
-  Scalar,
   GlowLayer,
   Mesh,
   PBRMaterial,
-  Texture,
-  CubeTexture,
   DynamicTexture
 } from '@babylonjs/core'
 import type { AggregateResults } from '../results-summary/types'
