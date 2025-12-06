@@ -4,7 +4,7 @@ import { login, isAuthenticated } from '../utils/auth'
 
 const isProd = Boolean((import.meta as any)?.env?.PROD)
 const BACKEND_URL = isProd
-  ? 'https://sandbox-backend-977058061007.us-east1.run.app'
+  ? 'https://sandbox-backend-977058061007.us-central1.run.app'
   : 'http://localhost:8081'
 
 type LocationState = {

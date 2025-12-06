@@ -8,7 +8,7 @@ import type { CountySimulationState, NewsroomEvent, ReportingConfig } from '../t
 
 // Backend URL configuration - points to your Spring Boot backend
 const BACKEND_URL = import.meta.env.PROD 
-  ? (import.meta.env.VITE_BACKEND_URL || 'https://sandbox-backend-977058061007.us-east1.run.app')
+  ? (import.meta.env.VITE_BACKEND_URL || 'https://sandbox-backend-977058061007.us-central1.run.app')
   : 'http://localhost:8081'
 const WS_URL = `${BACKEND_URL}/ws`
 

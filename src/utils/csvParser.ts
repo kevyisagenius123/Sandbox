@@ -343,7 +343,7 @@ export function generateSampleCSV(): string {
 export async function downloadSampleCSV(templateName: string = 'sandbox_counties.csv'): Promise<void> {
   try {
     // Use backend URL from environment or default
-    const backendUrl = (typeof window !== 'undefined' && (window as any).ENV?.VITE_BACKEND_URL) || 'https://sandbox-backend-977058061007.us-east1.run.app'
+    const backendUrl = (typeof window !== 'undefined' && (window as any).ENV?.VITE_BACKEND_URL) || 'https://sandbox-backend-977058061007.us-central1.run.app'
     const response = await fetch(`${backendUrl}/api/export/templates/${templateName}`)
     if (!response.ok) {
       throw new Error(`Failed to fetch template: ${response.statusText}`)
