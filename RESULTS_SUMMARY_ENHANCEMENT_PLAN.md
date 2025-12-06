@@ -597,6 +597,7 @@ useResultsSummaryData.ts (EXTEND)
 
 All new charts follow our existing pattern from WinProbabilityGauge.tsx:
 
+{% raw %}
 ```tsx
 // Example: MarginTimelineChart.tsx
 import React, { useEffect, useRef, memo } from 'react'
@@ -648,6 +649,7 @@ const areEqual = (prev: MarginTimelineChartProps, next: MarginTimelineChartProps
 
 export const MarginTimelineChart = memo(MarginTimelineChartComponent, areEqual)
 ```
+{% endraw %}
 
 ### Data Requirements
 
